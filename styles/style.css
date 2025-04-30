@@ -26,7 +26,6 @@ Rec создан как span с псевдоэлементом в виде то�
 Уголки тоже псевдоэлементы у decorated-zone */
 
 .header {
-  padding: 10px 10px;
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -37,6 +36,7 @@ Rec создан как span с псевдоэлементом в виде то�
   "header__description header__description";
   height: 100vh;
   min-height: 668px;
+  padding: 10px 10px;
 }
 
 .decorated-zone::before {
@@ -150,10 +150,10 @@ Rec создан как span с псевдоэлементом в виде то�
 при этом артикл собраны в свой отдельный флекс  */
 
 .section {
-  padding: 0 10px;
   display: grid;
   grid-template-columns:  1fr;
   gap: 20px;
+  padding: 0 10px;
 }
 
 .article__link {
@@ -245,6 +245,7 @@ Rec создан как span с псевдоэлементом в виде то�
 /* Секция Gallery */
 
 .section__gallery {
+  grid-template-columns: 1fr;
   grid-template-areas:
   "section__add__title"
   "gallery__sunset"
@@ -286,7 +287,6 @@ Rec создан как span с псевдоэлементом в виде то�
 /* Футер */
 
 .footer {
-  padding: 10px 10px;
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -298,6 +298,7 @@ Rec создан как span с псевдоэлементом в виде то�
   height: 100vh;
   min-height: 668px;
   margin-top: 40px;
+  padding: 10px 10px;
 }
 
 .footer__title {
@@ -350,9 +351,9 @@ Rec создан как span с псевдоэлементом в виде то�
     inset-inline-end: 20px;
   }
   .section {
-    padding: 0 20px;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
+    padding: 0 20px;
   }
   .section__why {
     grid-template-areas:
@@ -438,7 +439,7 @@ Rec создан как span с псевдоэлементом в виде то�
   }
   .header__rec {
     inset-block-start: 20px;
-    inset-inline-end: 20px; 
+    inset-inline-end: 20px;
   }
   .section {
     grid-template-columns: 1fr 1fr 1fr;
