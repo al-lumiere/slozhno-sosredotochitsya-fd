@@ -162,7 +162,7 @@ Rec создан как span с псевдоэлементом в виде то�
   border-bottom: 1px solid var(--main-text-color);
 }
 
-.article__link:focus-visible, .article__link:focus  {
+.article__link:focus-visible, .article__link:focus {
   border: 1px solid var(--main-text-color);
 }
 
@@ -449,7 +449,7 @@ Rec создан как span с псевдоэлементом в виде то�
     column-gap: 20px;
     margin-top: 80px;
   }
-  .section__what .section__articles  {
+  .section__what .section__articles {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-area: section__articles;
