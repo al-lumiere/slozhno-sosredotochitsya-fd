@@ -1,5 +1,489 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  padding: 0 10px;
+  color: var(--main-text-color);
+  font-family: var(--main-font), san-serif;
+  font-weight: var(--thin-font-weight);
+  font-size: var(--main-font-size);
+  font-style: normal;
+  background-color: var(--bg-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  inline-size: 375px;
+  block-size: 6770px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+}
+
+
+/* Хэдер — грид с 2 колонками и 3 строками.
+Rec создан как span с псевдоэлементом в виде точки.
+Уголки тоже псевдоэлементы у decorated-zone */
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-areas:
+  ".  header__theme-menu"
+  "header__title header__title"
+  "header__description header__description";
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px 0;
+}
+
+.decorated-zone::before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  justify-self: end;
+  border-top: 1px solid  var(--add-text-color);
+  border-right: 1px solid  var(--add-text-color);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-start: 10px;
+}
+
+.decorated-zone::after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  justify-self: start;
+  border-bottom: 1px solid  var(--add-text-color);
+  border-left: 1px solid  var(--add-text-color);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 10px;
+}
+
+.header__rec {
+  position: absolute;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-weight: var(--thin-font-weight);
+  line-height: 25px;
+  text-align: center;
+  inset-block-start: 10px;
+}
+
+.header__rec::after {
+  content: ' ';
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin-right: 10px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 4px var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-items: end;
+  grid-area: header__theme-menu;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.header__theme-menu-item {
+  color: var(--add-text-color);
+  font-family: "IBM Plex Mono";
+  line-height: 18px;
+  text-align: center;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 0px 13px 3px 12px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-button-color);
+}
+
+.header__theme-menu-button:focus, .header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--add-text-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--add-text-color);
+  pointer-events: none;
+}
+
+.header__title {
+  grid-area: header__title;
+  color: var(--title-color);
+  font-family: var(--main-font), san-serif;
+  font-weight: var(--bold-font-weight);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.header__description {
+  grid-area: header__description;
+  align-self: center;
+  color: var(--accent-font-color);
+  font-family: var(--main-font), san-serif;
+  font-weight: var(--bold-font-weight);
+  line-height: var(--main-line-height);
+}
+
+/* Секция Why — грид с 3 колонками,
+при этом артикл собраны в свой отдельный флекс  */
+
+.section {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 20px;
+}
+
+.article__link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0px var(--accent-color);
+}
+
+.article__link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.article__link:focus-visible, .article__link:focus  {
+  border: 1px solid var(--main-text-color);
+}
+
+.section__why {
+  grid-template-areas:
+  "section__title"
+  "section__articles";
+  margin-top: 40px;
+}
+
+.section__title {
+  grid-area: section__title;
+  color: var(--add-text-color);
+  font-weight: var(--bold-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+.section__articles {
+  display: flex;
+  flex-direction: column;
+  grid-area: section__articles;
+  gap: 20px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article__title {
+  color: var(--accent-font-color);
+  font-weight: var(--bold-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+.article__description {
+  color: var(--main-text-color);
+  font-weight: var(--thin-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+/* Секция What */
+
+.section__what {
+  grid-template-areas:
+  "section__title"
+  "section__articles";
+  margin-top: 50px;
+}
+
+/* Секция How */
+
+.section__how {
+  grid-template-areas:
+  "section__title"
+  "section__add__title"
+  "section__articles";
+  margin-top: 50px;
+}
+
+.section__add__title {
+  grid-area: section__add__title;
+  color: var(--accent-font-color);
+  font-weight: var(--bold-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+.section__how .article__title {
+  font-weight: var(--thin-font-weight);
+}
+
+/* Секция Gallery */
+
+.section__gallery {
+  grid-template-areas:
+  "section__add__title"
+  "gallery__sunset"
+  "gallery__ice-cream"
+  "gallery__tape"
+  "gallery__books"
+  "gallery__street";
+  gap: 10px;
+  margin-top: 48px;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery__sunset {
+  grid-area: gallery__sunset;
+}
+
+.gallery__ice-cream {
+  grid-area: gallery__ice-cream;
+}
+
+.gallery__tape {
+  grid-area: gallery__tape;
+}
+
+.gallery__books {
+  grid-area: gallery__books;
+}
+
+.gallery__street {
+  grid-area: gallery__street;
+}
+
+/* Футер */
+
+.footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-areas:
+  ".  ."
+  "footer__title footer__title"
+  ". .";
+  height: 100vh;
+  min-height: 668px;
+  margin-top: 40px;
+  padding: 10px 0;
+}
+
+.footer__title {
+  grid-area: footer__title;
+  color: var(--title-color);
+  font-family: var(--main-font), san-serif;
+  font-weight: var(--bold-font-weight);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-align: center;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+
+
+
+
+/* Медиазапросы */
+
+@media (width >= 768px) {
+  .page {
+    padding: 0 20px;
+    inline-size: 768px;
+    block-size: 5850px;
+  }
+  .header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-areas:
+    ".  header__theme-menu"
+    "header__title header__title"
+    ". header__description";
+    height: 100vh;
+    min-height: 1024px;
+    padding: 20px 0;
+  }
+  .header__title {
+    margin-left: -20px; /* Наставник сказал, что в этом месте не должны забраковать отрицательный отступ */
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  .decorated-zone::before {
+    inset-block-start: 20px;
+  }
+  .decorated-zone::after {
+    inset-block-end: 20px;
+  }
+  .header__rec {
+    inset-block-start: 20px;
+  }
+  .section {
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+  .section__why {
+    grid-template-areas:
+    "section__title  section__articles";
+    margin-top: 60px;
+  }
+  .section__what {
+    grid-template-areas:
+    "section__title ."
+    "section__articles section__articles";
+    margin-top: 80px;
+  }
+  .section__how {
+    grid-template-areas:
+    "section__title section__add__title"
+    "section__title section__articles";
+    margin-top: 80px;
+  }
+  .section__gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "section__add__title section__add__title section__add__title"
+    "gallery__sunset gallery__sunset gallery__ice-cream"
+    "gallery__tape gallery__books gallery__ice-cream"
+    "gallery__tape gallery__street gallery__street";
+    gap: 20px;
+    margin-top: 78px;
+  }
+  .footer {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-areas:
+    ". ."
+    "footer__title footer__title"
+    ". .";
+    height: 100vh;
+    min-height: 1024px;
+    margin-top: 60px;
+    padding: 20px 0;
+  }
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .page {
+    padding: 0 20px;
+    inline-size: 1024px;
+    block-size: 5008px;
+  }
+  .header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-areas:
+    "header__theme-menu  header__theme-menu"
+    "header__title header__title"
+    ". header__description";
+    height: 100vh;
+    min-height: 768px;
+    padding: 20px 0;
+  }
+  .header__theme-menu {
+    justify-items: center;
+    grid-area: header__theme-menu;
+    align-self: start;
+  }
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+  }
+  .header__title {
+    margin-left: -20px; /* Наставник сказал, что в этом месте не должны забраковать отрицательный отступ */
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  .decorated-zone::before {
+    inset-block-start: 20px;
+  }
+  .decorated-zone::after {
+    inset-block-end: 20px;
+  }
+  .header__rec {
+    inset-block-start: 20px;
+  }
+  .section {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+  }
+  .section__why {
+    grid-template-areas:
+    "section__title  section__articles section__articles";
+    margin-top: 60px;
+  }
+  .section__what {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "section__title . ."
+    "section__articles section__articles section__articles";
+    column-gap: 20px;
+    margin-top: 80px;
+  }
+  .section__what .section__articles  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: section__articles;
+    row-gap: 20px;
+  }
+  .section__how {
+    grid-template-areas:
+    "section__title  section__add__title section__add__title"
+    "section__title section__articles section__articles";
+    margin-top: 80px;
+  }
+  .section__gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "section__add__title section__add__title section__add__title"
+    "gallery__sunset gallery__sunset gallery__ice-cream"
+    "gallery__tape gallery__books gallery__ice-cream"
+    "gallery__tape gallery__street gallery__street";
+    gap: 20px;
+    margin-top: 78px;
+  }
+  .footer {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-areas:
+    ". ."
+    "footer__title footer__title"
+    ". .";
+    height: 100vh;
+    min-height: 768px;
+    margin-top: 60px;
+    padding: 20px 0;
+  }
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
