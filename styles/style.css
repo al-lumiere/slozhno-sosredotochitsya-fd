@@ -1,7 +1,6 @@
 /* Основные стили проекта. */
 
 .page {
-  padding: 0 10px;
   color: var(--main-text-color);
   font-family: var(--main-font), san-serif;
   font-weight: var(--thin-font-weight);
@@ -27,6 +26,7 @@ Rec создан как span с псевдоэлементом в виде то�
 Уголки тоже псевдоэлементы у decorated-zone */
 
 .header {
+  padding: 10px 10px;
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -37,7 +37,6 @@ Rec создан как span с псевдоэлементом в виде то�
   "header__description header__description";
   height: 100vh;
   min-height: 668px;
-  padding: 10px 0;
 }
 
 .decorated-zone::before {
@@ -49,6 +48,7 @@ Rec создан как span с псевдоэлементом в виде то�
   border-right: 1px solid  var(--add-text-color);
   inline-size: 25px;
   block-size: 25px;
+  inset-inline-end: 10px;
   inset-block-start: 10px;
 }
 
@@ -62,6 +62,7 @@ Rec создан как span с псевдоэлементом в виде то�
   inline-size: 25px;
   block-size: 25px;
   inset-block-end: 10px;
+  inset-inline-start: 10px;
 }
 
 .header__rec {
@@ -75,6 +76,7 @@ Rec создан как span с псевдоэлементом в виде то�
   line-height: 25px;
   text-align: center;
   inset-block-start: 10px;
+  inset-inline-end: 10px;
 }
 
 .header__rec::after {
@@ -148,6 +150,7 @@ Rec создан как span с псевдоэлементом в виде то�
 при этом артикл собраны в свой отдельный флекс  */
 
 .section {
+  padding: 0 10px;
   display: grid;
   grid-template-columns:  1fr;
   gap: 20px;
@@ -283,6 +286,7 @@ Rec создан как span с псевдоэлементом в виде то�
 /* Футер */
 
 .footer {
+  padding: 10px 10px;
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -294,7 +298,6 @@ Rec создан как span с псевдоэлементом в виде то�
   height: 100vh;
   min-height: 668px;
   margin-top: 40px;
-  padding: 10px 0;
 }
 
 .footer__title {
@@ -316,7 +319,6 @@ Rec создан как span с псевдоэлементом в виде то�
 
 @media (width >= 768px) {
   .page {
-    padding: 0 20px;
     inline-size: 768px;
     block-size: 5850px;
   }
@@ -329,7 +331,7 @@ Rec создан как span с псевдоэлементом в виде то�
     ". header__description";
     height: 100vh;
     min-height: 1024px;
-    padding: 20px 0;
+    padding: 20px 20px;
   }
   .header__title {
     margin-left: -20px; /* Наставник сказал, что в этом месте не должны забраковать отрицательный отступ */
@@ -337,14 +339,18 @@ Rec создан как span с псевдоэлементом в виде то�
   }
   .decorated-zone::before {
     inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
   .decorated-zone::after {
     inset-block-end: 20px;
+    inset-inline-start: 20px;
   }
   .header__rec {
     inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
   .section {
+    padding: 0 20px;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
   }
@@ -385,7 +391,7 @@ Rec создан как span с псевдоэлементом в виде то�
     height: 100vh;
     min-height: 1024px;
     margin-top: 60px;
-    padding: 20px 0;
+    padding: 20px 20px;
   }
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -394,7 +400,6 @@ Rec создан как span с псевдоэлементом в виде то�
 
 @media (width >= 1024px) {
   .page {
-    padding: 0 20px;
     inline-size: 1024px;
     block-size: 5008px;
   }
@@ -407,7 +412,7 @@ Rec создан как span с псевдоэлементом в виде то�
     ". header__description";
     height: 100vh;
     min-height: 768px;
-    padding: 20px 0;
+    padding: 20px 20px;
   }
   .header__theme-menu {
     justify-items: center;
@@ -425,16 +430,20 @@ Rec создан как span с псевдоэлементом в виде то�
   }
   .decorated-zone::before {
     inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
   .decorated-zone::after {
     inset-block-end: 20px;
+    inset-inline-start: 20px;
   }
   .header__rec {
     inset-block-start: 20px;
+    inset-inline-end: 20px; 
   }
   .section {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
+    padding: 0 20px;
   }
   .section__why {
     grid-template-areas:
@@ -481,7 +490,7 @@ Rec создан как span с псевдоэлементом в виде то�
     height: 100vh;
     min-height: 768px;
     margin-top: 60px;
-    padding: 20px 0;
+    padding: 20px 20px;
   }
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
