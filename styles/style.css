@@ -230,6 +230,7 @@ Rec создан как span с псевдоэлементом в виде то�
 
 .section__gallery {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 10px;
   margin-top: 50px;
 }
