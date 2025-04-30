@@ -48,6 +48,10 @@ button:focus, a:focus {
   outline: none;
 }
 
-picture, source {
-  display: contents;
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
