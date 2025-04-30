@@ -240,6 +240,21 @@ Rec создан как span с псевдоэлементом в виде то�
   object-fit: cover;
   object-position: center;
 }
+.gallery__sunset {
+  grid-row: span 1;
+}
+.gallery__ice-cream {
+  grid-row: span 2;
+}
+.gallery__tape {
+  grid-row: span 3;
+}
+.gallery__books {
+  grid-row: span 4;
+}
+.gallery__street {
+  grid-row: span 5;
+}
 
 
 /* Футер */
