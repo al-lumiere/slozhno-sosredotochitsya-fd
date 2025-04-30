@@ -241,19 +241,19 @@ Rec создан как span с псевдоэлементом в виде то�
   object-position: center;
 }
 .gallery__sunset {
-  grid-row: span 1;
+  grid-row: 1;
 }
 .gallery__ice-cream {
-  grid-row: span 2;
+  grid-row: 2;
 }
 .gallery__tape {
-  grid-row: span 3;
+  grid-row: 3;
 }
 .gallery__books {
-  grid-row: span 4;
+  grid-row: 4;
 }
 .gallery__street {
-  grid-row: span 5;
+  grid-row: 5;
 }
 
 
